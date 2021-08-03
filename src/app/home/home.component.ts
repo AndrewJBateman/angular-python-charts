@@ -86,15 +86,25 @@ export class HomeComponent implements OnInit {
         labels: [],
         datasets: [
           {
-            label: 'Process Humidity',
+            label: 'Humidity',
             data: [],
             fill: false,
             borderColor: 'rgb(44, 11, 179)',
+            borderWidth: 1,
+            pointStyle: 'rectRot',
+            pointRadius: 2,
+            pointBorderColor: 'rgb(0, 0, 0)',
             tension: 0.1,
-          },
+          }
         ],
       },
       options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Chart of Chemical Process Variables'
+          }
+        },
         scales: {
           y: {
             beginAtZero: true,
