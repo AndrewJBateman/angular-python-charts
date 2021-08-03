@@ -1,0 +1,60 @@
+<div class="container">
+  <mat-card text-center class="process-card">
+    <mat-card-header>
+      <div mat-card-avatar class="card-header-image"></div>
+      <mat-card-title>Chemical Process Variables</mat-card-title>
+      <mat-card-subtitle>Data Entry Pod</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="card-form-field">
+        <mat-label>Enter humidity</mat-label>
+        <input matInput type="text" [(ngModel)]="humiditySensorReading" />
+        <button
+          *ngIf="humiditySensorReading"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="humiditySensorReading = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="card-form-field">
+        <mat-label>Enter Temperature</mat-label>
+        <input matInput type="text" [(ngModel)]="temperatureSensorReading" />
+        <button
+          *ngIf="temperatureSensorReading"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="temperatureSensorReading = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="insertData()"
+        aria-label="Button to enter process data"
+        style="width: 100%"
+      >
+        <mat-icon>add_box</mat-icon>
+        ENTER
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-list *ngIf="currentSensorReadings | async as sensors">
+    <mat-list-item>Current Humidity: {{ sensors.humidity }}</mat-list-item>
+    <mat-list-item
+      >Current Temperature: {{ sensors.temperature }}</mat-list-item
+    >
+  </mat-list>
+
+  <div>
+    <canvas id="chartHumidity"></canvas>
+  </div>
+</div>

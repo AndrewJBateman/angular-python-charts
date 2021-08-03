@@ -1,0 +1,29 @@
+.process-card {
+  max-width: 400px;
+  margin: 16px auto;
+}
+
+.card-header-image {
+  background-image: url('../../assets/chart.svg');
+  background-size: cover;
+}
+
+.input-box {
+  width: 40px;
+}
+
+.card-form-field {
+  width: 200px;
+}
+
+mat-list {
+  max-width: 400px;
+  margin: 16px auto;
+  background-color: #424242;
+  padding: 16px;
+}
+
+canvas: {
+  width: 750px !important;
+  height: 400px !important;
+}

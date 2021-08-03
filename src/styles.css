@@ -1,0 +1,5 @@
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+body {
+    background:rgb(236, 243, 248);
+}
