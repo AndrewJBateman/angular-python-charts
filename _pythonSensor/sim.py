@@ -22,6 +22,7 @@ cred = credentials.Certificate(credentials_path)
 firebase_admin.initialize_app(cred)
 
 # unicode string is the default in Python 3
+# f string evaluates at runtime of the program
 COLLECTION_NAME = 'manufProcess'
 
 def build_historic_doc_name():
@@ -59,20 +60,18 @@ if __name__ == '__main__':
         print(f'humidity: {humidity}, temperature: {temperature}')
 
         data = {
-            u'humidity': humidity,
-            u'temperature': temperature,
-            u'timestamp': datetime.utcnow(),                # use utcnow() instead of now(), otherwise the timezone offset will be applied twice
-            # u'timestamp': firestore.SERVER_TIMESTAMP
+            'humidity': humidity,
+            'temperature': temperature,
+            'timestamp': datetime.utcnow(),                # use utcnow() instead of now(), otherwise the timezone offset will be applied twice
         }
         doc_ref = db.collection(COLLECTION_NAME).document(doc_current)
         doc_ref.set(data)
 
         data = {
-            u'historicalMeasurements': firestore.ArrayUnion( [{
-                u'humidity': humidity,
-                u'temperature': temperature,
-                u'timestamp': datetime.utcnow(),                # use utcnow() instead of now(), otherwise the timezone offset will be applied twice
-                # u'timestamp': firestore.SERVER_TIMESTAMP
+            'historicalMeasurements': firestore.ArrayUnion( [{
+                'humidity': humidity,
+                'temperature': temperature,
+                'timestamp': datetime.utcnow(),                # use utcnow() instead of now(), otherwise the timezone offset will be applied twice
             }] )
         }
         doc_ref = db.collection(COLLECTION_NAME).document(doc_historic)
