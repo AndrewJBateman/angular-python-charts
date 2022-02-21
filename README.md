@@ -26,7 +26,7 @@
 
 ## :books: General info
 
-* Angular 12 frontend shows chart data
+* Angular 13 frontend shows chart data
 * Angular Material components such as mat-card, mat-form, mat-input & mat-list used
 * Python connects to Google Cloud Firestore database using a JSON access key file in the `/_pythonSensor` directory (ignored by Git). Random humidity and temperature data points generated - the number of points and time between samples can be specified by the user. These points are stored by Firestore with timestamps.
 * Requires Pip module: google-cloud-firestore for Python backend to access Firestore database
@@ -39,23 +39,26 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v12](https://angular.io/)
-* [Angular Material v12](https://material.angular.io/)
-* [rxjs v6](https://rxjs.dev/) reactive extensions library
-* [Firebase v7](https://firebase.google.com/)
+* [Angular v13](https://angular.io/)
+* [Angular Material v13](https://material.angular.io/)
+* [rxjs v7](https://rxjs.dev/) reactive extensions library
+* [Firebase v9](https://firebase.google.com/)
 * [Python v3.9.5](https://www.python.org/) latest version
 * [Python package: google-cloud-firestore v2.2.0](https://pypi.org/project/google-cloud-firestore/)
-* [Chart.js](https://www.chartjs.org/docs/3.1.1/)
+* [Chart.js v3](https://www.chartjs.org/docs/3.7.1/)
 
 ## :floppy_disk: Setup
 
 * `npm i` to install dependencies
 * Install Python
 * Install pip
-* Install pip module using pip3 install --upgrade google-cloud-firestore
+* `pip install google.cloud` to install python google cloud
+* `pip install firebase-admin` to install python firebase_admin
+* Install pip module using `pip install --upgrade google-cloud-firestore
 * Firebase console: create new project and add Firestore Database
+* Add firebase access credentials to app `environment` files
 * **Frontend:** `ng serve` for a dev server. Navigate to `http://localhost:4200/` - app will automatically reload if you change any of the source files
-* **Backend:** cd `/_pythonSensor` then run python `sim.py` to run Python code to generate data points
+* **Backend:** cd `_pythonSensor` then run python `sim.py` to run Python code to generate data points
 * `ng build --prod` for a build folder
 
 ## :flashlight: Testing
