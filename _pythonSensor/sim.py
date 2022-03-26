@@ -30,6 +30,7 @@ def build_historic_doc_name():
     hour = datetime.today().strftime('%H')
     return f'{date}_h{hour}'
 
+# helper function for arguments
 def parse_args():
     parser = argparse.ArgumentParser(description='Sensor simulator')
     # parser.add_argument('-o','--once', action='store_true', help='Simulate sensor simulation s...once')         # doesn't take in a value (stores as True/False)
