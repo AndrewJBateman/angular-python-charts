@@ -1,4 +1,4 @@
-# Angular Python Charts
+# :zap: Angular Python Charts
 
 * Angular frontend chart display with a Firestore database storing data supplied by a Python backend
 * **Note:** to open web links in a new window use: _ctrl+click on link_
@@ -26,7 +26,7 @@
 
 ## :books: General info
 
-* Angular 13 frontend shows chart data
+* Angular frontend shows chart data
 * Angular Material components such as mat-card, mat-form, mat-input & mat-list used
 * Python connects to Google Cloud Firestore database using a JSON access key file in the `/_pythonSensor` directory (ignored by Git). Random humidity and temperature data points generated - the number of points and time between samples can be specified by the user. These points are stored by Firestore with timestamps.
 * Requires Pip module: google-cloud-firestore for Python backend to access Firestore database
@@ -39,8 +39,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v13](https://angular.io/)
-* [Angular Material v13](https://material.angular.io/)
+* [Angular v14](https://angular.io/)
+* [Angular Material v14](https://material.angular.io/)
 * [rxjs v7](https://rxjs.dev/) reactive extensions library
 * [Firebase v9](https://firebase.google.com/)
 * [Python v3.9.5](https://www.python.org/) latest version
@@ -56,9 +56,10 @@
 * `pip install firebase-admin` to install python firebase_admin
 * Install pip module using `pip install --upgrade google-cloud-firestore
 * Firebase console: create new project and add Firestore Database
-* Add firebase access credentials to app `environment` files
+* **Frontend:** Add firebase access credentials to app `environment` files
+* **Backend** Download firebase credentials to `./data.privateKey.json`
 * **Frontend:** `ng serve` for a dev server. Navigate to `http://localhost:4200/` - app will automatically reload if you change any of the source files
-* **Backend:** cd `_pythonSensor` then run python `sim.py` to run Python code to generate data points
+* **Backend:** Run `cd _pythonSensor` then run python `sim.py` to run Python code to generate data points
 * `ng build --prod` for a build folder
 
 ## :flashlight: Testing
