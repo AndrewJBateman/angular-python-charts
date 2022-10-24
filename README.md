@@ -59,7 +59,7 @@
 * **Frontend:** Add firebase access credentials to app `environment` files
 * **Backend** Download firebase credentials to `./data.privateKey.json`
 * **Frontend:** `ng serve` for a dev server. Navigate to `http://localhost:4200/` - app will automatically reload if you change any of the source files
-* **Backend:** Run `cd _pythonSensor` then run python `sim.py` to run Python code to generate data points
+* **Backend:** Run `cd _pythonSensor` then `python sim.py` to run Python code to generate data points
 * `ng build --prod` for a build folder
 
 ## :flashlight: Testing
